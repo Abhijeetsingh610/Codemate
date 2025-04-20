@@ -1,8 +1,8 @@
 # Jenix
 
-Jenix is an agentic coding assistant that works directly in your terminal, leveraging local LLMs from Ollama. It simplifies coding tasks, provides intelligent suggestions, and supports advanced AI models like Google Gemini and Anthropic Claude.
+Jenix is an agentic coding assistant that works directly in your terminal, leveraging local LLMs from Ollama. It simplifies coding tasks, provides intelligent suggestions.
 
-![Version](https://img.shields.io/badge/version-0.1.0-blue)
+![Version](https://img.shields.io/badge/version-0.1.3-blue)
 
 ---
 
@@ -11,8 +11,6 @@ Jenix is an agentic coding assistant that works directly in your terminal, lever
 - **Interactive Chat Mode**: Have conversations with AI models for coding assistance.
 - **Agent Mode**: Generate, edit, and manage code files with ease.
 - **Advanced AI Support**:
-  - Google Gemini (Jenix Pro Agent)
-  - Anthropic Claude
   - Local Ollama models
 - **Enhanced Tools**: File operations, code analysis, and terminal commands.
 - **Cross-Platform**: Works on Windows, macOS, and Linux.
@@ -26,9 +24,6 @@ Before using Jenix, ensure the following:
 1. **Python**: Version 3.6 or higher.
 2. **Ollama**: Installed and running. [Download Ollama](https://ollama.ai/).
 3. **Language Models**: Pull one or more models into Ollama (e.g., `codellama:13b`, `mistral:7b`).
-4. **Optional API Keys**:
-   - Google API key (for Jenix Pro Agent with Gemini).
-   - Anthropic API key (for Claude Agent).
 
 ---
 
@@ -112,16 +107,6 @@ jenix --model codellama:13b --agent
 5. The agent checks for existing files and handles directories automatically
 6. After file creation, you can run executable files directly
 
-### Jenix Pro Agent
-
-AI coding assistant supporting Google Gemini and local Ollama models.
-
-## Features
-
-- Interactive chat interface with AI models
-- Local file system access for reading and writing code
-- Terminal command execution
-- Support for both Google Gemini and local Ollama models
 
 ## Installation
 
@@ -144,13 +129,6 @@ For Windows users, you'll need the `pyreadline3` package:
 pip install -e ".[windows]"
 ```
 
-### Gemini Support
-
-To use Google Gemini models:
-
-```bash
-pip install -e ".[gemini]"
-```
 
 ## Usage
 
@@ -160,33 +138,15 @@ Run the agent with a local Llama model:
 jenix --model llama3:8b --jenix-pro-agent
 ```
 
-Or with Google Gemini:
 
-```bash
-jenix --model gemini-pro --jenix-pro-agent
-```
-
-## Configuration
-
-The agent can be configured via a `config.yaml` file in your home directory:
-
-```yaml
-api_key: your_gemini_api_key  # Required for Gemini models
-model: llama3:8b  # Default model
-```
 
 ## Requirements
 
 - Python 3.8 or higher
 - Ollama (for local models)
-- Google API key (for Gemini models)
 
-## Setting Up Google API Key
 
-To use the Gemini models, you'll need to set up a Google API key:
 
-```bash
-jenix --jenix-pro-setup YOUR_API_KEY
 ```
 
 ## Using Ollama Models
@@ -204,27 +164,6 @@ set Jenix_OLLAMA_MODEL=llama3:8b
 jenix --jenix-pro-agent --use-ollama
 ```
 
-## Available Commands
-
-Start the agent:
-```bash
-jenix --jenix-pro-agent
-```
-
-Specify a model:
-```bash
-jenix --jenix-pro-model gemini-1.5-pro --jenix-pro-agent
-```
-
-List available Gemini models:
-```bash
-jenix --jenix-pro-list-models
-```
-
-Set default model:
-```bash
-jenix --jenix-pro-set-default-model gemini-1.5-pro
-```
 
 ## Chat Commands
 
@@ -240,9 +179,6 @@ jenix --jenix-pro-set-default-model gemini-1.5-pro
 - Make sure Ollama is running locally at http://localhost:11434
 - Check that the requested model is available in your Ollama installation
 
-### API Key Issues
-- Verify that your Google API key is correctly set up
-- Check your API quota limits if you receive API error responses
 
 ## Examples
 
@@ -266,16 +202,6 @@ jenix --model codellama:13b --agent
 
 Then describe your coding task when prompted, such as: "Create a simple weather API client in Python"
 
-### Using Jenix Pro Agent with Gemini
-
-```
-jenix --jenix-pro-agent
-```
-
-### Using Claude Agent with a Local Model
-
-```
-jenix --model llama3:8b --local --claude-agent
 ```
 
 ### Automatic Model Selection
@@ -286,30 +212,6 @@ If you don't specify a model, Jenix will automatically use the first available m
 jenix --chat
 jenix --agent
 ```
-
-## Advanced Agents
-
-Jenix includes two advanced AI coding agents:
-
-### Jenix Pro Agent
-
-Powered by Google's Gemini models with support for local Ollama models. Features include:
-- Advanced code understanding and generation
-- File system operations and terminal commands
-- Rich terminal UI with syntax highlighting
-- Support for both cloud and local models
-
-See [Jenix_PRO_README.md](Jenix_PRO_README.md) for more details.
-
-### Claude Agent
-
-Powered by Anthropic's Claude with support for local Ollama models. Features include:
-- Deep codebase understanding
-- File editing and git integration
-- Context-aware code generation
-- Support for both API and local models
-
-See [CLAUDE_AGENT_README.md](CLAUDE_AGENT_README.md) for more details.
 
 ## License
 
