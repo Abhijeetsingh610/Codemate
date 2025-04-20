@@ -15,7 +15,7 @@ import glob
 from typing import Dict, List, Tuple, Optional, Any, Union
 
 # Constants
-VERSION = "0.3.2"
+VERSION = "0.1.2"
 OLLAMA_API_BASE = "http://localhost:11434/api"
 MAX_RETRIES = 3
 RETRY_DELAY = 1  # seconds

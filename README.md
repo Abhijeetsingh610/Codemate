@@ -2,7 +2,7 @@
 
 Codemate is an agentic coding assistant that works directly in your terminal, leveraging local LLMs from Ollama. It simplifies coding tasks, provides intelligent suggestions, and supports advanced AI models like Google Gemini and Anthropic Claude.
 
-![Version](https://img.shields.io/badge/version-0.3.0-blue)
+![Version](https://img.shields.io/badge/version-0.1.0-blue)
 
 ---
 
@@ -36,7 +36,7 @@ Before using Codemate, ensure the following:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Codemate-Offiicial/Codemate-Pair-coder-in-terminal--Alpha.git
+git clone https://github.com/Abhijeetsingh610/Codemate.git
 cd codemate
 ```
 
@@ -129,7 +129,7 @@ AI coding assistant supporting Google Gemini and local Ollama models.
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/codemate-pro-agent.git
+git clone https://github.com/Abhijeetsingh610/Codemate.git
 cd codemate-pro-agent
 
 # Install the package
