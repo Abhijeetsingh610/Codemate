@@ -73,7 +73,7 @@ class GitUtils:
             return False
             
         if not message:
-            message = f"Codemate: Updated {', '.join(os.path.basename(f) for f in files)}"
+            message = f"Termind: Updated {', '.join(os.path.basename(f) for f in files)}"
             
         try:
             # Add files to staging
@@ -358,7 +358,7 @@ def chat_mode(model_name, temperature: float = 0.7, use_streaming: bool = True):
             continue
         elif user_input.lower() == 'save':
             # Save conversation to file
-            filename = f"codemate_chat_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+            filename = f"termind_chat_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
             with open(filename, 'w', encoding='utf-8') as f:
                 f.write(f"Chat with {model_name} - {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
                 for msg in chat_history:
@@ -390,7 +390,7 @@ def chat_mode(model_name, temperature: float = 0.7, use_streaming: bool = True):
         
         # Generate response
         if use_streaming:
-            print(colorize("\nCodemate: ", Colors.CYAN), end="", flush=True)
+            print(colorize("\nTermind: ", Colors.CYAN), end="", flush=True)
             full_response = ""
             for chunk in generate_response(model_name, prompt, temperature, stream=True):
                 print(chunk, end="", flush=True)
@@ -400,7 +400,7 @@ def chat_mode(model_name, temperature: float = 0.7, use_streaming: bool = True):
         else:
             print(colorize("\nThinking...", Colors.BLUE))
             response = generate_response(model_name, prompt, temperature)
-            print(colorize("\nCodemate: ", Colors.CYAN) + response)
+            print(colorize("\nTermind: ", Colors.CYAN) + response)
         
         # Add assistant response to history
         chat_history.append({"role": "assistant", "content": response})
@@ -1111,7 +1111,7 @@ def deduplicate_files(files):
 
 def agent_mode(model_name, temperature=0.7):
     """Start an agent session for coding tasks in an aider-like interactive mode."""
-    print(colorize(f"\n{'='*50}\nWelcome to Codemate Agent Mode!\n{'='*50}", Colors.HEADER))
+    print(colorize(f"\n{'='*50}\nWelcome to Termind Agent Mode!\n{'='*50}", Colors.HEADER))
     print(colorize(f"Model: {model_name}", Colors.CYAN))
     print(colorize("Type your coding task or question below.", Colors.YELLOW))
     print(colorize("Type 'help' for a list of commands. Type 'exit' to quit.", Colors.YELLOW))
@@ -1196,7 +1196,7 @@ You operate in an interactive mode similar to aider.
                 commit_msg = input(colorize("Enter commit message (or press Enter for default): ", Colors.YELLOW))
                 if GitUtils.commit_changes(modified_files, commit_msg if commit_msg else None):
                     print(colorize("Changes committed successfully.", Colors.GREEN))
-            print(colorize("\nThank you for using Codemate Agent Mode. Goodbye!\n", Colors.CYAN))
+            print(colorize("\nThank you for using Termind Agent Mode. Goodbye!\n", Colors.CYAN))
             break
         elif user_input.lower() == 'clear':
             chat_history = [{"role": "system", "content": system_prompt}]
@@ -1328,7 +1328,7 @@ You operate in an interactive mode similar to aider.
         prompt += "Assistant: "
         
         # Stream assistant response
-        print(colorize("\nCodemate: ", Colors.CYAN), end="", flush=True)
+        print(colorize("\nTermind: ", Colors.CYAN), end="", flush=True)
         full_response = ""
         try:
             for chunk in generate_response(model_name, prompt, temperature, stream=True):
@@ -1442,15 +1442,16 @@ def get_available_models():
         return []
 
 def print_banner(version=VERSION):
-    """Print the Codemate banner."""
+    """Print the Termind banner."""
     print(colorize("\n" + "="*60, Colors.CYAN))
-    print(colorize("   ██████╗ ██████╗ ██████╗ ███████╗███╗   ███╗ █████╗ ████████╗███████╗", Colors.BLUE))
-    print(colorize("  ██╔════╝██╔═══██╗██╔══██╗██╔════╝████╗ ████║██╔══██╗╚══██╔══╝██╔════╝", Colors.BLUE))
-    print(colorize("  ██║     ██║   ██║██║  ██║█████╗  ██╔████╔██║███████║   ██║   █████╗  ", Colors.BLUE))
-    print(colorize("  ██║     ██║   ██║██║  ██║██╔══╝  ██║╚██╔╝██║██╔══██║   ██║   ██╔══╝  ", Colors.BLUE))
-    print(colorize("  ╚██████╗╚██████╔╝██████╔╝███████╗██║ ╚═╝ ██║██║  ██║   ██║   ███████╗", Colors.BLUE))
-    print(colorize("   ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝", Colors.BLUE))
-    print(colorize(f"       Codemate - Agentic Coding Assistant v{version}", Colors.GREEN))
+    print(colorize(" _______                  _           _ ", Colors.BLUE))
+    print(colorize("|__   __|                (_)         | |", Colors.BLUE))
+    print(colorize("   | | ___ _ __ _ __ ___  _ _ __   __| |", Colors.BLUE))
+    print(colorize("   | |/ _ \\ '__| '_ ` _ \\| | '_ \\ / _` |", Colors.BLUE))
+    print(colorize("   | |  __/ |  | | | | | | | | | | (_| |", Colors.BLUE))
+    print(colorize("   |_|\\___|_|  |_| |_| |_|_|_| |_|\\__,_|", Colors.BLUE))
+
+    print(colorize(f"       Termind - Agentic Coding Assistant v{version}", Colors.GREEN))
     print(colorize("="*60 + "\n", Colors.GREEN))
 
 
@@ -1488,7 +1489,7 @@ def sanitize_filename(filename):
 def run_claude_agent(model_name, api_provider="anthropic"):
     pass  # Removed
 
-def run_codemate_pro_agent(model_name):
+def run_termind_pro_agent(model_name):
     pass  # Removed
 
 def edit_mode(model_name, temperature: float = 0.7):
@@ -1609,7 +1610,7 @@ def edit_mode(model_name, temperature: float = 0.7):
         prompt += f"User: {user_input}\nAssistant: "
         
         # Stream assistant response
-        print(colorize("Codemate: ", Colors.CYAN), end="", flush=True)
+        print(colorize("Termind: ", Colors.CYAN), end="", flush=True)
         full_response = ""
         for chunk in generate_response(model_name, prompt, temperature, stream=True):
             print(chunk, end="", flush=True)
@@ -1619,7 +1620,7 @@ def edit_mode(model_name, temperature: float = 0.7):
 
 def main():
     """Main entry point for the application."""
-    parser = argparse.ArgumentParser(description="Codemate - Agentic Coding Assistant")
+    parser = argparse.ArgumentParser(description="Termind - Agentic Coding Assistant")
     parser.add_argument("--model", type=str, help="Specify the model to use")
     parser.add_argument("--chat", action="store_true", help="Start a chat session")
     parser.add_argument("--agent", action="store_true", help="Start an agent session for coding tasks")
@@ -1632,7 +1633,7 @@ def main():
     
     # Handle version display
     if args.version:
-        print(f"Codemate version {VERSION}")
+        print(f"Termind version {VERSION}")
         sys.exit(0)
     
     # Disable colors if requested
@@ -1692,7 +1693,7 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print(colorize("\nExiting Codemate. Goodbye!", Colors.CYAN))
+        print(colorize("\nExiting Termind. Goodbye!", Colors.CYAN))
     except Exception as e:
         print(colorize(f"\nError: {str(e)}", Colors.RED))
         print(colorize("If this problem persists, please report the issue.", Colors.YELLOW))

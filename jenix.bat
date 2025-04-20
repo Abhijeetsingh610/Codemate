@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-echo Starting Codemate v0.2.0...
+echo Starting Jenix v0.2.0...
 
 REM Check if Python is installed
 where python >nul 2>&1
@@ -46,10 +46,10 @@ if %errorlevel% equ 0 (
 )
 
 REM Run the script
-python "%~dp0codemate.py" %*
+python "%~dp0jenix.py" %*
 if %errorlevel% neq 0 (
     echo.
-    echo An error occurred while running Codemate.
+    echo An error occurred while running Jenix.
 )
 
 :end

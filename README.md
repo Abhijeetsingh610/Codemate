@@ -1,6 +1,6 @@
-# Codemate
+# Jenix
 
-Codemate is an agentic coding assistant that works directly in your terminal, leveraging local LLMs from Ollama. It simplifies coding tasks, provides intelligent suggestions, and supports advanced AI models like Google Gemini and Anthropic Claude.
+Jenix is an agentic coding assistant that works directly in your terminal, leveraging local LLMs from Ollama. It simplifies coding tasks, provides intelligent suggestions, and supports advanced AI models like Google Gemini and Anthropic Claude.
 
 ![Version](https://img.shields.io/badge/version-0.1.0-blue)
 
@@ -11,7 +11,7 @@ Codemate is an agentic coding assistant that works directly in your terminal, le
 - **Interactive Chat Mode**: Have conversations with AI models for coding assistance.
 - **Agent Mode**: Generate, edit, and manage code files with ease.
 - **Advanced AI Support**:
-  - Google Gemini (Codemate Pro Agent)
+  - Google Gemini (Jenix Pro Agent)
   - Anthropic Claude
   - Local Ollama models
 - **Enhanced Tools**: File operations, code analysis, and terminal commands.
@@ -21,13 +21,13 @@ Codemate is an agentic coding assistant that works directly in your terminal, le
 
 ## 🛠️ Prerequisites
 
-Before using Codemate, ensure the following:
+Before using Jenix, ensure the following:
 
 1. **Python**: Version 3.6 or higher.
 2. **Ollama**: Installed and running. [Download Ollama](https://ollama.ai/).
 3. **Language Models**: Pull one or more models into Ollama (e.g., `codellama:13b`, `mistral:7b`).
 4. **Optional API Keys**:
-   - Google API key (for Codemate Pro Agent with Gemini).
+   - Google API key (for Jenix Pro Agent with Gemini).
    - Anthropic API key (for Claude Agent).
 
 ---
@@ -36,8 +36,8 @@ Before using Codemate, ensure the following:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Abhijeetsingh610/Codemate.git
-cd codemate
+git clone https://github.com/Abhijeetsingh610/Jenix.git
+cd Jenix
 ```
 
 2. Choose one of the installation methods:
@@ -56,35 +56,35 @@ cd codemate
    ```
    .\install_powershell.bat
    ```
-   This creates a PowerShell module that allows you to use the `codemate` command directly in PowerShell.
+   This creates a PowerShell module that allows you to use the `Jenix` command directly in PowerShell.
 
 ## Usage
 
 ### Basic Commands
 
 ```
-codemate --model MODEL_NAME --chat       # Start a chat session
-codemate --model MODEL_NAME --agent      # Start an agent for coding tasks
-codemate --claude-agent                  # Start Claude Agent (requires API key)
-codemate --codemate-pro-agent            # Start Codemate Pro Agent (Gemini integration)
-codemate --list-models                   # Show available models
-codemate --no-color                      # Disable colored output
-codemate help                            # Show help information
+Jenix --model MODEL_NAME --chat       # Start a chat session
+jenix --model MODEL_NAME --agent      # Start an agent for coding tasks
+jenix --claude-agent                  # Start Claude Agent (requires API key)
+jenix --jenix-pro-agent            # Start Jenix Pro Agent (Gemini integration)
+jenix --list-models                   # Show available models
+jenix --no-color                      # Disable colored output
+jenix help                            # Show help information
 ```
 
 ### Windows Users
 
-**CMD Users**: Run `run_codemate.bat` for a convenient menu interface.
+**CMD Users**: Run `run_jenix.bat` for a convenient menu interface.
 
-**PowerShell Users**: After running `install_powershell.bat`, you can use `codemate` commands directly in PowerShell. 
-Alternatively, use `.\Use-Codemate.ps1` with arguments (the simplest approach).
+**PowerShell Users**: After running `install_powershell.bat`, you can use `jenix` commands directly in PowerShell. 
+Alternatively, use `.\Use-Jenix.ps1` with arguments (the simplest approach).
 
 ### Chat Mode
 
 Chat mode allows you to have a conversation with the LLM:
 
 ```
-codemate --model llama2:7b --chat
+jenix --model llama2:7b --chat
 ```
 
 #### Chat Commands
@@ -100,7 +100,7 @@ While in chat mode, you can use these special commands:
 Agent mode helps you generate code based on your requirements:
 
 ```
-codemate --model codellama:13b --agent
+jenix --model codellama:13b --agent
 ```
 
 #### How Agent Mode Works
@@ -112,7 +112,7 @@ codemate --model codellama:13b --agent
 5. The agent checks for existing files and handles directories automatically
 6. After file creation, you can run executable files directly
 
-### Codemate Pro Agent
+### Jenix Pro Agent
 
 AI coding assistant supporting Google Gemini and local Ollama models.
 
@@ -129,8 +129,8 @@ AI coding assistant supporting Google Gemini and local Ollama models.
 
 ```bash
 # Clone the repository
-git clone https://github.com/Abhijeetsingh610/Codemate.git
-cd codemate-pro-agent
+git clone https://github.com/Abhijeetsingh610/Jenix.git
+cd jenix-pro-agent
 
 # Install the package
 pip install -e .
@@ -157,13 +157,13 @@ pip install -e ".[gemini]"
 Run the agent with a local Llama model:
 
 ```bash
-codemate --model llama3:8b --codemate-pro-agent
+jenix --model llama3:8b --jenix-pro-agent
 ```
 
 Or with Google Gemini:
 
 ```bash
-codemate --model gemini-pro --codemate-pro-agent
+jenix --model gemini-pro --jenix-pro-agent
 ```
 
 ## Configuration
@@ -186,7 +186,7 @@ model: llama3:8b  # Default model
 To use the Gemini models, you'll need to set up a Google API key:
 
 ```bash
-codemate --codemate-pro-setup YOUR_API_KEY
+jenix --jenix-pro-setup YOUR_API_KEY
 ```
 
 ## Using Ollama Models
@@ -194,36 +194,36 @@ codemate --codemate-pro-setup YOUR_API_KEY
 To use local Ollama models, make sure Ollama is installed and running on your system, then:
 
 ```bash
-codemate --model llama3:8b --codemate-pro-agent --use-ollama
+jenix --model llama3:8b --jenix-pro-agent --use-ollama
 ```
 
-You can also set the CODEMATE_OLLAMA_MODEL environment variable to specify the model:
+You can also set the jenix_OLLAMA_MODEL environment variable to specify the model:
 
 ```bash
-set CODEMATE_OLLAMA_MODEL=llama3:8b
-codemate --codemate-pro-agent --use-ollama
+set Jenix_OLLAMA_MODEL=llama3:8b
+jenix --jenix-pro-agent --use-ollama
 ```
 
 ## Available Commands
 
 Start the agent:
 ```bash
-codemate --codemate-pro-agent
+jenix --jenix-pro-agent
 ```
 
 Specify a model:
 ```bash
-codemate --codemate-pro-model gemini-1.5-pro --codemate-pro-agent
+jenix --jenix-pro-model gemini-1.5-pro --jenix-pro-agent
 ```
 
 List available Gemini models:
 ```bash
-codemate --codemate-pro-list-models
+jenix --jenix-pro-list-models
 ```
 
 Set default model:
 ```bash
-codemate --codemate-pro-set-default-model gemini-1.5-pro
+jenix --jenix-pro-set-default-model gemini-1.5-pro
 ```
 
 ## Chat Commands
@@ -249,49 +249,49 @@ codemate --codemate-pro-set-default-model gemini-1.5-pro
 ### Listing Available Models
 
 ```
-codemate --list-models
+jenix --list-models
 ```
 
 ### Starting Chat Mode
 
 ```
-codemate --model mistral:7b --chat
+jenix --model mistral:7b --chat
 ```
 
 ### Using Agent Mode to Create and Run a Python Script
 
 ```
-codemate --model codellama:13b --agent
+jenix --model codellama:13b --agent
 ```
 
 Then describe your coding task when prompted, such as: "Create a simple weather API client in Python"
 
-### Using Codemate Pro Agent with Gemini
+### Using Jenix Pro Agent with Gemini
 
 ```
-codemate --codemate-pro-agent
+jenix --jenix-pro-agent
 ```
 
 ### Using Claude Agent with a Local Model
 
 ```
-codemate --model llama3:8b --local --claude-agent
+jenix --model llama3:8b --local --claude-agent
 ```
 
 ### Automatic Model Selection
 
-If you don't specify a model, Codemate will automatically use the first available model in your Ollama installation:
+If you don't specify a model, Jenix will automatically use the first available model in your Ollama installation:
 
 ```
-codemate --chat
-codemate --agent
+jenix --chat
+jenix --agent
 ```
 
 ## Advanced Agents
 
-Codemate includes two advanced AI coding agents:
+Jenix includes two advanced AI coding agents:
 
-### Codemate Pro Agent
+### Jenix Pro Agent
 
 Powered by Google's Gemini models with support for local Ollama models. Features include:
 - Advanced code understanding and generation
@@ -299,7 +299,7 @@ Powered by Google's Gemini models with support for local Ollama models. Features
 - Rich terminal UI with syntax highlighting
 - Support for both cloud and local models
 
-See [CODEMATE_PRO_README.md](CODEMATE_PRO_README.md) for more details.
+See [Jenix_PRO_README.md](Jenix_PRO_README.md) for more details.
 
 ### Claude Agent
 

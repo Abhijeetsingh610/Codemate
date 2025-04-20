@@ -1,4 +1,4 @@
-# Installation Instructions for Codemate
+# Installation Instructions for Jenix
 
 ## 1. Requirements
 - Python 3.8 or higher
@@ -6,18 +6,18 @@
 - (Windows) Git Bash or PowerShell for advanced scripts
 
 ## 2. Quick Start (Recommended)
-1. **Download** the latest `codemate_full.zip` from the [official website](website/download.html) or [GitHub](https://github.com/Codeium-AI/codemate).
+1. **Download** the latest `jenix_full.zip` from the [official website](website/download.html) or [GitHub](https://github.com/Codeium-AI/jenix).
 2. **Extract** the ZIP file to your preferred location.
 3. **Open a terminal** (PowerShell, CMD, or Bash) in the extracted folder.
 4. **Install dependencies:**
    ```sh
    pip install -r requirements.txt
    ```
-5. **Run Codemate:**
+5. **Run Jenix:**
    ```sh
-   python codemate.py
+   python jenix.py
    ```
-   Or use the provided batch scripts (e.g., `run_codemate.bat` on Windows).
+   Or use the provided batch scripts (e.g., `run_jenix.bat` on Windows).
 
 ## 3. Optional: Advanced/Agent Features
 - To use advanced agent/LLM features, ensure Ollama is installed and running.
@@ -28,7 +28,7 @@
 - Reinstall requirements if needed.
 
 ## 5. Troubleshooting
-- If you encounter issues, check the `README.md` or visit the [GitHub Issues page](https://github.com/Codeium-AI/codemate/issues).
+- If you encounter issues, check the `README.md` or visit the [GitHub Issues page](https://github.com/Codeium-AI/jenix/issues).
 
 ## 6. Uninstallation
 - Simply delete the extracted folder and files.
